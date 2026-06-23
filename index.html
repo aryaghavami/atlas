@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlas · by Arya Joonam</title>
+<meta name="description" content="One honest instrument per domain of your life. Each Atlas tool reads your real data and computes the single number that matters.">
+<meta name="theme-color" content="#0B0A09">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://atlas.aryajoonam.com">
+<meta property="og:title" content="Atlas · One honest instrument per domain of your life.">
+<meta property="og:description" content="Money, body, mind. Each one reads your real data and tells you the one number that matters.">
+<meta property="og:image" content="https://aryajoonam.com/photos/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Atlas · One honest instrument per domain of your life.">
+<meta name="twitter:description" content="Money, body, mind. Each one reads your real data and tells you the one number that matters.">
+<meta name="twitter:image" content="https://aryajoonam.com/photos/og.jpg">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  :root{scroll-behavior:smooth;}
+  body{margin:0;padding:0;background:#0B0A09;-webkit-font-smoothing:antialiased;}
+  ::selection{background:rgba(190,157,94,0.28);color:#F4ECD9;}
+  @keyframes ajPulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
+  /* Reveals run via the Web Animations API in the logic class (animate FROM hidden,
+     gated to a visible tab), so content always rests at full opacity. No opacity trap. */
+  @media (prefers-reduced-motion: reduce){:root{scroll-behavior:auto;}}
+</style>
+</helmet>
+
+<div style="position:relative;min-height:100svh;background:#0B0A09;overflow-x:hidden;font-family:'EB Garamond',serif;">
+
+  <!-- static gold poster glow: paints instantly under everything -->
+  <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:60vh;background:radial-gradient(110% 80% at 50% -8%,rgba(190,157,94,0.13),rgba(11,10,9,0) 58%);z-index:0;pointer-events:none;"></div>
+  <!-- pointer-tracked gold glow: the one signature micro-moment, cheap and instant -->
+  <div ref="{{ glowRef }}" aria-hidden="true" style="position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0.6;background:radial-gradient(300px 300px at 50% 12%,rgba(230,210,154,0.08),rgba(11,10,9,0) 70%);"></div>
+
+  <!-- double-gold inset frame: the page reads as matted on a gallery wall -->
+  <div aria-hidden="true" style="position:fixed;inset:11px;border:1px solid rgba(190,157,94,0.4);z-index:60;pointer-events:none;"></div>
+  <div aria-hidden="true" style="position:fixed;inset:15px;border:1px solid rgba(190,157,94,0.14);z-index:60;pointer-events:none;"></div>
+
+  <div style="position:relative;z-index:2;max-width:1040px;margin:0 auto;width:100%;padding:0 26px;">
+
+    <!-- minimal header: orientation + the route back to the brand. Nothing else. -->
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:30px 0 0;">
+      <a href="https://aryajoonam.com" style="font-family:'EB Garamond',serif;font-size:15px;color:#cdc7ba;text-decoration:none;letter-spacing:0.01em;transition:color 0.25s ease;" style-hover="color:#F4ECD9;">Arya Joonam</a>
+      <span style="font-family:'Cormorant Garamond',serif;font-size:11px;font-weight:500;letter-spacing:0.32em;text-transform:uppercase;color:#8c877d;">The products arm</span>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- HERO. Intent: in 5 seconds, say what Atlas is and frame the   -->
+    <!-- choice. One promise, then get out of the way so the cards     -->
+    <!-- (the actual router) sit as high as possible.                  -->
+    <!-- ============================================================ -->
+    <section style="padding:74px 0 40px;text-align:center;display:flex;flex-direction:column;align-items:center;">
+      <div data-reveal style="font-family:'Cormorant Garamond',serif;font-size:12px;font-weight:500;letter-spacing:0.5em;text-transform:uppercase;color:#BE9D5E;">Atlas</div>
+      <!-- Promise. Alt: "One instrument for each part of your life. No noise, no nagging." -->
+      <h1 data-reveal style="font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(31px,6.4vw,50px);line-height:1.08;letter-spacing:-0.01em;color:#F4ECD9;margin:16px 0 0;max-width:640px;text-wrap:balance;">One honest instrument per <span style="font-style:italic;color:#BE9D5E;">domain of your life.</span></h1>
+      <p data-reveal style="font-family:'EB Garamond',serif;font-size:clamp(16px,4vw,18px);line-height:1.55;color:#b8b3a8;margin:18px 0 0;max-width:440px;text-wrap:pretty;">Each one reads your real data and computes the single number that matters. No dashboards, no nagging. Open one.</p>
+      <div data-reveal style="margin-top:18px;font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:#8c877d;"><span style="color:#A8C3A6;">Two live</span> · one in the build</div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- THE MODULES. Intent: this is the router. Each plate is a       -->
+    <!-- one-tap door into a live instrument; the real figures + gold   -->
+    <!-- pulse prove it's alive, not a coming-soon promise.             -->
+    <!-- ============================================================ -->
+    <section style="padding:6px 0 18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px;">
+
+      <!-- MONEY (live) -->
+      <a data-reveal href="https://atlas-money.aryajoonam.com" target="_blank" rel="noopener" style="position:relative;display:flex;flex-direction:column;padding:26px 24px 22px;background:rgba(244,236,217,0.022);border:1px solid rgba(190,157,94,0.24);text-decoration:none;overflow:hidden;transition:border-color 0.3s ease,background 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;" style-hover="border-color:rgba(190,157,94,0.62);background:rgba(244,236,217,0.045);transform:translateY(-3px);box-shadow:0 26px 50px -28px rgba(0,0,0,0.8);">
+        <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:74px;background:radial-gradient(120% 130% at 50% -40%,rgba(190,157,94,0.14),transparent 64%);pointer-events:none;"></div>
+        <div style="position:relative;display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:23px;color:#F4ECD9;letter-spacing:0.01em;">Atlas · Money</span>
+          <span style="display:flex;align-items:center;gap:6px;font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#A8C3A6;"><span style="width:6px;height:6px;border-radius:50%;background:#A8C3A6;box-shadow:0 0 9px rgba(168,195,166,0.85);animation:ajPulse 2.4s ease-in-out infinite;"></span>Live</span>
+        </div>
+        <!-- Tagline. Alt: "The day work becomes optional, from your real accounts." -->
+        <p style="font-family:'EB Garamond',serif;font-size:15.5px;line-height:1.5;color:#b8b3a8;margin:9px 0 0;text-wrap:pretty;">The exact day you hit your number.</p>
+
+        <div style="margin-top:22px;display:flex;border-top:1px solid rgba(190,157,94,0.16);padding-top:16px;">
+          <div style="flex:1;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#908C83;">Net worth</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#EDE6D6;margin-top:5px;font-variant-numeric:tabular-nums lining-nums;">$342,180</div>
+          </div>
+          <div style="flex:1;padding-left:14px;border-left:1px solid rgba(190,157,94,0.16);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#908C83;">Runway</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#EDE6D6;margin-top:5px;font-variant-numeric:tabular-nums lining-nums;">24 <span style="font-size:13px;color:#8c877d;">mo</span></div>
+          </div>
+          <div style="flex:1;padding-left:14px;border-left:1px solid rgba(190,157,94,0.16);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#908C83;">Target date</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#BE9D5E;margin-top:5px;font-variant-numeric:tabular-nums lining-nums;">2034</div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;display:flex;align-items:center;gap:8px;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;letter-spacing:0.03em;color:#BE9D5E;">Open Atlas · Money <span style="font-size:17px;line-height:0;transition:transform 0.3s ease;">→</span></div>
+      </a>
+
+      <!-- BODY (live) -->
+      <a data-reveal href="https://atlas-body.aryajoonam.com" target="_blank" rel="noopener" style="position:relative;display:flex;flex-direction:column;padding:26px 24px 22px;background:rgba(244,236,217,0.022);border:1px solid rgba(190,157,94,0.24);text-decoration:none;overflow:hidden;transition:border-color 0.3s ease,background 0.3s ease,transform 0.3s ease,box-shadow 0.3s ease;" style-hover="border-color:rgba(190,157,94,0.62);background:rgba(244,236,217,0.045);transform:translateY(-3px);box-shadow:0 26px 50px -28px rgba(0,0,0,0.8);">
+        <div aria-hidden="true" style="position:absolute;top:0;left:0;right:0;height:74px;background:radial-gradient(120% 130% at 50% -40%,rgba(190,157,94,0.14),transparent 64%);pointer-events:none;"></div>
+        <div style="position:relative;display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:23px;color:#F4ECD9;letter-spacing:0.01em;">Atlas · Body</span>
+          <span style="display:flex;align-items:center;gap:6px;font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#A8C3A6;"><span style="width:6px;height:6px;border-radius:50%;background:#A8C3A6;box-shadow:0 0 9px rgba(168,195,166,0.85);animation:ajPulse 2.4s ease-in-out infinite;"></span>Live</span>
+        </div>
+        <!-- Tagline. Alt: "Your real body composition date. No 12-week fantasy." -->
+        <p style="font-family:'EB Garamond',serif;font-size:15.5px;line-height:1.5;color:#b8b3a8;margin:9px 0 0;text-wrap:pretty;">The honest date you reach your target physique.</p>
+
+        <div style="margin-top:22px;display:flex;border-top:1px solid rgba(190,157,94,0.16);padding-top:16px;">
+          <div style="flex:1;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#908C83;">Body fat</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#EDE6D6;margin-top:5px;font-variant-numeric:tabular-nums lining-nums;">18.4<span style="font-size:13px;color:#8c877d;">%</span></div>
+          </div>
+          <div style="flex:1;padding-left:14px;border-left:1px solid rgba(190,157,94,0.16);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#908C83;">Lean mass</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#EDE6D6;margin-top:5px;font-variant-numeric:tabular-nums lining-nums;">147 <span style="font-size:13px;color:#8c877d;">lb</span></div>
+          </div>
+          <div style="flex:1;padding-left:14px;border-left:1px solid rgba(190,157,94,0.16);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#908C83;">Target date</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#BE9D5E;margin-top:5px;font-variant-numeric:tabular-nums lining-nums;">2027</div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;display:flex;align-items:center;gap:8px;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;letter-spacing:0.03em;color:#BE9D5E;">Open Atlas · Body <span style="font-size:17px;line-height:0;transition:transform 0.3s ease;">→</span></div>
+      </a>
+
+      <!-- MIND (coming). Intent: make "coming" earned, not empty. Same plate,   -->
+      <!-- figures redacted but present, a quiet route to get it first.          -->
+      <a data-reveal href="https://aryajoonam.com" style="position:relative;display:flex;flex-direction:column;padding:26px 24px 22px;background:rgba(244,236,217,0.012);border:1px solid rgba(190,157,94,0.12);text-decoration:none;overflow:hidden;transition:border-color 0.3s ease,background 0.3s ease,transform 0.3s ease;" style-hover="border-color:rgba(190,157,94,0.32);background:rgba(244,236,217,0.022);transform:translateY(-3px);">
+        <div style="position:relative;display:flex;align-items:center;justify-content:space-between;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:23px;color:#cdc7ba;letter-spacing:0.01em;">Atlas · Mind</span>
+          <span style="display:flex;align-items:center;gap:6px;font-family:'Cormorant Garamond',serif;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#8c877d;"><span style="width:6px;height:6px;border-radius:50%;border:1px solid rgba(190,157,94,0.5);"></span>In the build</span>
+        </div>
+        <!-- Tagline. Alt: "The state of your mind, measured honestly." -->
+        <p style="font-family:'EB Garamond',serif;font-size:15.5px;line-height:1.5;color:#8c877d;margin:9px 0 0;text-wrap:pretty;">Clarity of mind, measured. Not vibes, numbers.</p>
+
+        <div style="margin-top:22px;display:flex;border-top:1px solid rgba(190,157,94,0.1);padding-top:16px;opacity:0.6;">
+          <div style="flex:1;">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#6f6a61;">Focus</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#6f6a61;margin-top:5px;letter-spacing:0.12em;">· · ·</div>
+          </div>
+          <div style="flex:1;padding-left:14px;border-left:1px solid rgba(190,157,94,0.1);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#6f6a61;">Recovery</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#6f6a61;margin-top:5px;letter-spacing:0.12em;">· · ·</div>
+          </div>
+          <div style="flex:1;padding-left:14px;border-left:1px solid rgba(190,157,94,0.1);">
+            <div style="font-family:'Cormorant Garamond',serif;font-size:9px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;color:#6f6a61;">Target date</div>
+            <div style="font-family:'Cormorant Garamond',serif;font-size:21px;color:#6f6a61;margin-top:5px;letter-spacing:0.12em;">· · ·</div>
+          </div>
+        </div>
+
+        <div style="margin-top:20px;display:flex;align-items:center;gap:8px;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:500;letter-spacing:0.03em;color:#908C83;">Get it first <span style="font-size:17px;line-height:0;">→</span></div>
+      </a>
+
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- SECONDARY CTA. Intent: subordinate route for the not-ready,   -->
+    <!-- back to the brand and the build. Never competes with a card.  -->
+    <!-- ============================================================ -->
+    <section data-reveal style="padding:34px 0 80px;text-align:center;border-top:1px solid rgba(190,157,94,0.1);margin-top:30px;">
+      <!-- Heading. Alt: "Every one of these started as a livestream." -->
+      <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,5vw,30px);font-weight:400;color:#EDE6D6;line-height:1.16;max-width:480px;margin:0 auto;text-wrap:balance;">Every one of these was built on camera.</div>
+      <p style="font-family:'EB Garamond',serif;font-size:16px;line-height:1.5;color:#8c877d;margin:12px auto 0;max-width:380px;text-wrap:pretty;">One tool a week, in public. Watch the build, or get every one free.</p>
+      <div style="margin-top:22px;display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;">
+        <a href="https://www.youtube.com/@aryajoonam" target="_blank" rel="noopener" style="font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;letter-spacing:0.02em;color:#BE9D5E;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid rgba(190,157,94,0.4);padding-bottom:3px;transition:gap 0.25s ease,color 0.25s ease;" style-hover="gap:13px;color:#E6D29A;">See how these get built <span style="font-size:16px;line-height:0;">→</span></a>
+        <a href="https://aryajoonam.com" style="font-family:'EB Garamond',serif;font-size:15px;color:#b8b3a8;text-decoration:none;border-bottom:1px solid rgba(184,179,168,0.28);padding-bottom:3px;transition:color 0.25s ease,border-color 0.25s ease;" style-hover="color:#F4ECD9;border-color:#BE9D5E;">Read the story</a>
+      </div>
+    </section>
+
+    <!-- minimal footer -->
+    <footer style="padding:26px 0 40px;border-top:1px solid rgba(190,157,94,0.12);display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;">
+      <span style="font-family:'Cormorant Garamond',serif;font-size:15px;letter-spacing:0.06em;color:#cdc7ba;">Atlas <span style="color:#6f6a61;">·</span> by Arya Joonam</span>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <a href="https://atlas-money.aryajoonam.com" target="_blank" rel="noopener" style="font-family:'EB Garamond',serif;font-size:14px;color:#8c877d;text-decoration:none;transition:color 0.25s ease;" style-hover="color:#BE9D5E;">Money</a>
+        <a href="https://atlas-body.aryajoonam.com" target="_blank" rel="noopener" style="font-family:'EB Garamond',serif;font-size:14px;color:#8c877d;text-decoration:none;transition:color 0.25s ease;" style-hover="color:#BE9D5E;">Body</a>
+        <a href="https://www.youtube.com/@aryajoonam" target="_blank" rel="noopener" style="font-family:'EB Garamond',serif;font-size:14px;color:#8c877d;text-decoration:none;transition:color 0.25s ease;" style-hover="color:#BE9D5E;">YouTube</a>
+      </div>
+    </footer>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() {
+    this._setupReveals();
+    this._setupGlow();
+  }
+  componentWillUnmount() {
+    window.removeEventListener("pointermove", this._onPointer);
+    document.removeEventListener("visibilitychange", this._onVisibility);
+    if (this._revealIO) this._revealIO.disconnect();
+  }
+
+  // Reveals via the Web Animations API: animate FROM hidden to the element's
+  // natural resting style. Time-based animations freeze at their current frame
+  // while a tab is hidden, which could trap a reveal at opacity 0 in any capture
+  // or background tab. Two guards make that impossible:
+  //   1) we only arm reveals while the tab is visible;
+  //   2) whenever the tab goes hidden, we cancel every in-flight reveal, so each
+  //      element snaps back to its natural (fully visible) resting style.
+  // Net effect: motion for a real viewer, never a frozen-invisible page.
+  _setupReveals() {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    this._revealEls = Array.from(document.querySelectorAll("[data-reveal]"));
+    if (reduce || !("animate" in document.createElement("div")) || !("IntersectionObserver" in window)) return;
+
+    this._onVisibility = () => {
+      if (document.hidden) {
+        // cancel anything mid-flight so it can't stay frozen at low opacity
+        this._revealEls.forEach((el) => {
+          el._revealed = true;
+          if (el.getAnimations) el.getAnimations().forEach((a) => a.cancel());
+        });
+      } else {
+        this._armReveals(this._revealEls);
+      }
+    };
+    document.addEventListener("visibilitychange", this._onVisibility);
+
+    if (!document.hidden) this._armReveals(this._revealEls);
+  }
+
+  _armReveals(els) {
+    // fill:"none" keeps the resting opacity at its natural 1, so a frozen or
+    // never-run animation still shows content. A soft stagger is baked into the
+    // keyframe offsets (a held-hidden span) rather than animation delay.
+    const play = (el) => {
+      if (el._revealed) return;
+      el._revealed = true;
+      const sibs = Array.from(el.parentElement.querySelectorAll(":scope > [data-reveal]"));
+      const idx = Math.min(Math.max(0, sibs.indexOf(el)), 6);
+      const hold = idx * 0.07;
+      const dur = 800 + idx * 80;
+      const anim = el.animate(
+        [
+          { opacity: 0, transform: "translateY(16px)", offset: 0 },
+          { opacity: 0, transform: "translateY(16px)", offset: hold },
+          { opacity: 1, transform: "translateY(0)", offset: 1 },
+        ],
+        { duration: dur, easing: "cubic-bezier(0.16,1,0.3,1)", fill: "none" }
+      );
+      // Wall-clock safety net: timers fire even if the compositor timeline is
+      // frozen (hidden/throttled tab). Canceling drops the effect, so the element
+      // rests at its natural opacity (1) and can never stay stuck at frame 0.
+      setTimeout(() => { try { anim.cancel(); } catch (e) {} }, dur + 250);
+    };
+
+    this._revealIO = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) { play(e.target); this._revealIO.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -6% 0px" });
+
+    els.forEach((el) => {
+      const r = el.getBoundingClientRect();
+      const vh = window.innerHeight || 800;
+      if (r.top < vh && r.bottom > 0) play(el);
+      else this._revealIO.observe(el);
+    });
+  }
+
+  // Signature micro-moment: a faint gold glow tracks the pointer.
+  _setupGlow() {
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !this._glow) return;
+    const el = this._glow;
+    this._onPointer = (e) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      el.style.background = "radial-gradient(320px 320px at " + x + "% " + y + "%,rgba(230,210,154,0.10),rgba(11,10,9,0) 70%)";
+    };
+    window.addEventListener("pointermove", this._onPointer, { passive: true });
+  }
+
+  renderVals() {
+    return {
+      glowRef: (el) => { this._glow = el; },
+    };
+  }
+}
+</script>
+</body>
+</html>
