@@ -5,8 +5,8 @@ import "./globals.css";
 // font-sans/font-mono map to them through CSS vars in globals.css :root.
 
 export const metadata: Metadata = {
-  title: "Atlas",
-  description: "Net worth, runway, target date. Nothing else.",
+  title: "Datum",
+  description: "A precision instrument for your financial trajectory. Net worth, runway, target date. Nothing else.",
 };
 
 export default function RootLayout({

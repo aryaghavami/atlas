@@ -89,7 +89,7 @@ export function AtlasAssumptions({
         </div>
         <div style={{ position: "absolute", inset: 0, padding: "76px 30px 34px", display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <span style={{ fontFamily: SERIF, fontSize: 22, color: "#EFEBE3", letterSpacing: "0.01em" }}>Atlas</span>
+            <span style={{ fontFamily: SERIF, fontSize: 22, color: "#EFEBE3", letterSpacing: "0.01em" }}>Datum</span>
             <span style={{ fontFamily: GEIST, fontSize: 10, fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase", color: "#908C83" }}>Assumptions</span>
           </div>
           <div style={{ marginTop: 30, fontFamily: GEIST, fontWeight: 300, fontSize: 25, lineHeight: 1.2, color: "#EFEBE3", letterSpacing: "-0.015em" }}>Tune your<br />trajectory.</div>

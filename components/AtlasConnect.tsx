@@ -31,23 +31,23 @@ export function AtlasConnect({ onContinue, footer }: { onContinue?: () => void; 
         </div>
         <div style={{ position: "absolute", inset: 0, padding: "76px 30px 34px", display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-            <span style={{ fontFamily: SERIF, fontSize: 22, color: "#EFEBE3", letterSpacing: "0.01em" }}>Atlas</span>
+            <span style={{ fontFamily: SERIF, fontSize: 22, color: "#EFEBE3", letterSpacing: "0.01em" }}>Datum</span>
             <span style={{ fontFamily: GEIST, fontSize: 10, fontWeight: 500, letterSpacing: "0.22em", textTransform: "uppercase", color: "#908C83" }}>Step 1 / 2</span>
           </div>
           <div style={{ marginTop: 48 }}>
             <div style={{ fontFamily: GEIST, fontWeight: 300, fontSize: 29, lineHeight: 1.2, color: "#EFEBE3", letterSpacing: "-0.015em" }}>Connect your<br />accounts.</div>
-            <div style={{ fontFamily: GEIST, fontWeight: 300, fontSize: 14, lineHeight: 1.6, color: "#9A968D", marginTop: 16, maxWidth: 290 }}>Atlas reads your balances to compute your runway and trajectory.</div>
+            <div style={{ fontFamily: GEIST, fontWeight: 300, fontSize: 14, lineHeight: 1.6, color: "#9A968D", marginTop: 16, maxWidth: 290 }}>Datum reads your balances to compute your runway and trajectory. <span style={{ color: "#EFEBE3", fontWeight: 400 }}>Read-only. We can see, never move a dollar.</span></div>
           </div>
           <div style={{ marginTop: 22, display: "inline-flex", alignSelf: "flex-start", alignItems: "center", gap: 9, border: "1px solid rgba(239,235,227,0.13)", borderRadius: 999, padding: "9px 14px" }}>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#A8C3A6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="10.5" width="16" height="10.5" rx="2.2" /><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5" /></svg>
-            <span style={{ fontFamily: GEIST, fontSize: 10, fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#A8C3A6" }}>Powered by Plaid</span>
+            <span style={{ fontFamily: GEIST, fontSize: 10, fontWeight: 500, letterSpacing: "0.14em", textTransform: "uppercase", color: "#A8C3A6" }}>256-bit encryption · via Plaid</span>
           </div>
           {footer ? (
             // Live flow: no fake pre-connected accounts - prompt to link the first one.
             <div style={{ marginTop: 38 }}>
               <div style={{ fontFamily: GEIST, fontSize: 10, fontWeight: 500, letterSpacing: "0.24em", textTransform: "uppercase", color: "#908C83" }}>Accounts</div>
               <div style={{ marginTop: 14, fontFamily: GEIST, fontWeight: 300, fontSize: 14, lineHeight: 1.6, color: "#7E7A72", maxWidth: 292 }}>
-                None linked yet. Connect your first account below. Atlas reads balances only, and never moves money.
+                None linked yet. Connect your first account below. Datum reads balances only, and never moves money.
               </div>
             </div>
           ) : (

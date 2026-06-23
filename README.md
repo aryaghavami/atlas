@@ -1,8 +1,11 @@
-# Atlas
+# Datum
 
-A finance app that shows the three numbers that actually run your life: your **net worth**
-(liquidity-adjusted), your **runway**, and the **exact date** you hit your number. Free, open, and
-you run your own copy connected to your own accounts.
+A precision instrument for your financial trajectory. After a one-time setup it shows three figures
+that actually run your life: your **net worth** (liquidity-adjusted), your **runway**, and the
+**exact date** you hit your number. Nothing else. Free, open, and you run your own copy connected to
+your own accounts.
+
+> Datum is module one of **Atlas**. Module two — [Atlas · Body](atlas-body/) — lives in this repo too.
 
 ## Deploy your own (one click)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/aryaghavami/atlas&env=PLAID_CLIENT_ID,PLAID_SECRET,PLAID_ENV,SUPABASE_URL,SUPABASE_SERVICE_ROLE_KEY,ATLAS_PASSWORD)

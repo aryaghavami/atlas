@@ -36,7 +36,7 @@ export function AtlasLanding() {
   return (
     <main style={{ minHeight: "100dvh", background: "radial-gradient(120% 80% at 50% -10%, rgba(212,175,55,0.08) 0%, rgba(0,0,0,0) 45%), #08080a", color: "#EFEBE3", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "48px 22px", textAlign: "center" }}>
       <div style={{ maxWidth: 560, width: "100%" }}>
-        <div style={{ fontFamily: GEIST, fontSize: 11, fontWeight: 500, letterSpacing: "0.28em", textTransform: "uppercase", color: "#b9952f" }}>Atlas · Money</div>
+        <div style={{ fontFamily: GEIST, fontSize: 11, fontWeight: 500, letterSpacing: "0.28em", textTransform: "uppercase", color: "#908C83" }}>Datum · Personal finance</div>
         <h1 style={{ fontFamily: SERIF, fontSize: 46, lineHeight: 1.05, margin: "18px 0 0", letterSpacing: "-0.01em" }}>See the exact day<br />you become a <span style={{ fontStyle: "italic" }}>millionaire.</span></h1>
         <p style={{ fontFamily: GEIST, fontWeight: 300, fontSize: 16, lineHeight: 1.55, color: "#b8b3a8", margin: "18px auto 0", maxWidth: 460 }}>
           See your net worth, your runway, and the exact day you hit your number. Connect your accounts and watch the date move. Free.
@@ -52,7 +52,7 @@ export function AtlasLanding() {
           </form>
         ) : (
           <div style={{ marginTop: 30, display: "flex", flexDirection: "column", gap: 11 }}>
-            <a href="/atlas/start" style={{ ...btn, background: "#EFEBE3", color: "#0C0C0D" }}>Open Atlas now ›</a>
+            <a href="/atlas/start" style={{ ...btn, background: "#EFEBE3", color: "#0C0C0D" }}>Open Datum now ›</a>
             <a href="/build" style={{ ...btn, background: "transparent", color: "#EFEBE3", border: "1px solid rgba(239,235,227,0.18)" }}>Deploy your own ›</a>
             <a href={YT} style={{ ...btn, background: "transparent", color: "#A8C3A6", border: "1px solid rgba(168,195,166,0.25)" }}>Watch me build it ›</a>
             <div style={{ fontFamily: GEIST, fontWeight: 300, fontSize: 12, color: "#7E7A72", marginTop: 4 }}>You&rsquo;re in. The demo runs on sample data. Deploy your own to use your real accounts.</div>

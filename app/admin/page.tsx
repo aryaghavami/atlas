@@ -41,7 +41,7 @@ export default async function Admin() {
   return (
     <main style={{ minHeight: "100dvh", background: "#08080a", color: "#EFEBE3", padding: "48px 22px 80px" }}>
       <div style={{ maxWidth: 720, margin: "0 auto" }}>
-        <div style={{ fontFamily: GEIST, fontSize: 11, fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "#b9952f" }}>Atlas · Admin</div>
+        <div style={{ fontFamily: GEIST, fontSize: 11, fontWeight: 500, letterSpacing: "0.26em", textTransform: "uppercase", color: "#908C83" }}>Datum · Admin</div>
         <h1 style={{ fontFamily: SERIF, fontSize: 36, margin: "10px 0 0" }}>Signups</h1>
 
         <div style={{ display: "flex", gap: 12, flexWrap: "wrap", marginTop: 24 }}>

@@ -9,7 +9,7 @@ export async function POST() {
     const redirect_uri = process.env.PLAID_REDIRECT_URI || undefined;
     const r = await plaid.linkTokenCreate({
       user: { client_user_id: "atlas-user" },
-      client_name: "Atlas",
+      client_name: "Datum",
       products: [Products.Auth, Products.Transactions, Products.Liabilities, Products.Investments],
       country_codes: [CountryCode.Us],
       language: "en",

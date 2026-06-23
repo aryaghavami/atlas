@@ -87,7 +87,7 @@ export function AtlasHome({
           <div style={{ position: "absolute", inset: 0, padding: "78px 32px 40px", display: "flex", flexDirection: "column" }}>
             {/* chrome */}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", ...rise(0) }}>
-              <span style={{ fontFamily: SERIF, fontSize: 22, color: "#EFEBE3", letterSpacing: "0.01em" }}>Atlas</span>
+              <span style={{ fontFamily: SERIF, fontSize: 22, color: "#EFEBE3", letterSpacing: "0.01em" }}>Datum</span>
               <div style={{ display: "flex", alignItems: "center", gap: 13 }}>
                 {adjustHref && (
                   <a href={adjustHref} aria-label="Adjust assumptions" className="atlas-adjust">

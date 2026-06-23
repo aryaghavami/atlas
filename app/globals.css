@@ -17,11 +17,12 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-/* Warm-dark, not sterile: a deep page wash + faint top vignette so pure black has depth. */
+/* Datum: warm anthracite, near-monochrome. A faint bone vignette gives depth without colour —
+   the figures and negative space do the talking; status (sage/amber) is the only accent. */
 body {
   background:
-    radial-gradient(140% 90% at 50% -10%, rgba(212, 175, 55, 0.06) 0%, rgba(0, 0, 0, 0) 45%),
-    radial-gradient(120% 80% at 50% 120%, rgba(212, 175, 55, 0.04) 0%, rgba(0, 0, 0, 0) 50%),
+    radial-gradient(140% 90% at 50% -10%, rgba(239, 235, 227, 0.035) 0%, rgba(0, 0, 0, 0) 45%),
+    radial-gradient(120% 80% at 50% 120%, rgba(239, 235, 227, 0.02) 0%, rgba(0, 0, 0, 0) 50%),
     #000000;
   background-attachment: fixed;
 }
