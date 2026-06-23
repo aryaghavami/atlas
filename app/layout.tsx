@@ -1,19 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
-// Fonts (Geist, Geist Mono, Instrument Serif) load via the <link> below. Tailwind's
-// font-sans/font-mono map to them through CSS vars in globals.css :root.
-
 export const metadata: Metadata = {
-  title: "Datum",
-  description: "A precision instrument for your financial trajectory. Net worth, runway, target date. Nothing else.",
+  title: "Atlas",
+  description: "One honest instrument per domain of your life. Three numbers each, and the date they point to.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export const viewport: Viewport = { themeColor: "#08080a", width: "device-width", initialScale: 1 };
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
