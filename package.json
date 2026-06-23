@@ -1,8 +1,8 @@
 {
-  "name": "arya-finance-dashboard",
+  "name": "atlas",
   "version": "0.1.0",
   "private": true,
-  "description": "Build 001 — the on-camera finance dashboard (dark + gold). Reads finance.* or a mock dataset.",
+  "description": "Atlas — the umbrella. One honest instrument per domain of your life.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -10,12 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.108.2",
     "next": "^14.2.33",
-    "plaid": "^42.2.0",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-plaid-link": "^4.1.1"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/node": "^22.10.2",
