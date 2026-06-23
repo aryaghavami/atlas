@@ -53,7 +53,8 @@ export const MONTHS = [
 ];
 
 const WEEKS_PER_MONTH = 4.345;
-const HORIZON_MONTHS = 120; // 10 years — past this it is "not before"
+const HORIZON_MONTHS = 120; // 10 years — reachable within this is "on track"
+const EXTENDED_MONTHS = 600; // 50 years — used only to date an honest "not before" message
 export const FFMI_CEILING = 25; // natural fat-free mass index ceiling
 
 const LB_PER_KG = 2.2046226218;
@@ -144,11 +145,13 @@ export function computeBody(input: EngineInput): EngineOutput {
     };
   }
 
-  // Month-by-month projection of the cut.
+  // Month-by-month projection of the cut. We run past the 10-year horizon (up to 50 years) only so
+  // an off-track date can name the real crossing year instead of a flat ceiling.
   let fat = startFat;
   let lean = startLean;
   let reached = -1;
-  for (let m = 1; m <= HORIZON_MONTHS; m++) {
+  let leanAtHorizon = lean; // lean mass captured at the on-track horizon, for the off-track readout
+  for (let m = 1; m <= EXTENDED_MONTHS; m++) {
     const weight = fat + lean;
     const monthlyLoss = weight * (weeklyDeficitPct / 100) * WEEKS_PER_MONTH * adherence;
     const leanLoss = monthlyLoss * leanFrac;
@@ -162,6 +165,7 @@ export function computeBody(input: EngineInput): EngineOutput {
 
     fat = Math.max(weight * 0.04, fat - fatLoss); // never below ~4% essential fat
     lean = lean - leanLoss + gain;
+    if (m === HORIZON_MONTHS) leanAtHorizon = lean;
 
     const bf = (fat / (fat + lean)) * 100;
     if (bf <= input.goalBodyFatPct) {
@@ -170,15 +174,16 @@ export function computeBody(input: EngineInput): EngineOutput {
     }
   }
 
-  const projectedLean = Math.round(lean);
-  const projectedLeanLoss = round1(startLean - lean);
+  const onTrack = reached > 0 && reached <= HORIZON_MONTHS;
 
-  if (reached < 0) {
-    // Did not converge inside the horizon → honest "not before".
+  if (!onTrack) {
+    // Either it crosses beyond the 10-year horizon, or never at this pace.
+    const crossingYear = reached > 0 ? monthsToDate(reached, baseYear, baseMonth).targetYear : null;
+    const projectedLean = Math.round(reached > 0 ? lean : leanAtHorizon);
     const reason =
-      adherence * weeklyDeficitPct < 0.25
-        ? "The deficit is too small to move the date. It is honest, not encouraging."
-        : "At this rate the target is more than ten years out.";
+      reached > 0
+        ? "More than ten years out at this pace. Honest, not encouraging."
+        : "The deficit is too small to move the date. It is honest, not encouraging.";
     return {
       bodyFatPct: round1(input.bodyFatPct),
       fatMassLb: round1(startFat),
@@ -189,15 +194,18 @@ export function computeBody(input: EngineInput): EngineOutput {
       leanStatus,
       leanCaption,
       projectedLeanMassLb: projectedLean,
-      projectedLeanLossLb: projectedLeanLoss,
+      projectedLeanLossLb: round1(startLean - (reached > 0 ? lean : leanAtHorizon)),
       reachable: false,
       monthsOut: null,
       targetMonth: null,
-      targetYear: baseYear + Math.ceil(HORIZON_MONTHS / 12),
+      targetYear: crossingYear, // null → "not in reach at this rate"
       notOnTrack: true,
       notOnTrackReason: reason,
     };
   }
+
+  const projectedLean = Math.round(lean);
+  const projectedLeanLoss = round1(startLean - lean);
 
   const { targetMonth, targetYear } = monthsToDate(reached, baseYear, baseMonth);
   return {

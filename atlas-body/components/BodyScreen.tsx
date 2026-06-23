@@ -6,7 +6,7 @@ import { EYEBROW_STYLE, PageShell, PhoneFrame } from "./PhoneFrame";
 import { computeBody, inputFromState, type EngineOutput } from "@/lib/engine";
 import { monteCarloBands } from "@/lib/engineBands";
 import { DEMO_STATE } from "@/lib/demo";
-import { loadState } from "@/lib/store";
+import { addWeighIn, loadState } from "@/lib/store";
 import { baseFromIso, weightDisplay } from "@/lib/format";
 import { tapHaptic } from "@/lib/haptics";
 import type { BodyState } from "@/lib/types";
@@ -31,6 +31,19 @@ export function BodyScreen() {
     if (real) {
       setState(real);
       setIsDemo(false);
+      // Best-effort scale sync: pull the latest Withings reading and fold it in if it's newer.
+      // No-op when Withings isn't configured (returns connected:false).
+      fetch("/api/withings/sync")
+        .then((r) => r.json())
+        .then((d: { weighIn?: { date: string; weightLb: number; bodyFatPct: number } }) => {
+          if (!d?.weighIn) return;
+          const newest = real.weighIns[real.weighIns.length - 1];
+          if (!newest || d.weighIn.date > newest.date) {
+            const merged = addWeighIn({ ...d.weighIn, source: "withings" });
+            setState(merged);
+          }
+        })
+        .catch(() => {});
     }
   }, []);
 
@@ -107,7 +120,7 @@ function OffHero({ out }: { out: EngineOutput }) {
         className="focus-in"
         style={{ fontFamily: SERIF, fontStyle: "italic", fontSize: 42, lineHeight: 1.08, color: C.goldSoft, letterSpacing: "-0.01em", marginTop: 24, maxWidth: 250, textWrap: "balance" } as React.CSSProperties}
       >
-        Not before {out.targetYear} at this rate.
+        {out.targetYear ? `Not before ${out.targetYear} at this rate.` : "Not in reach at this rate."}
       </div>
       <div style={{ fontFamily: GEIST, fontSize: 13, fontWeight: 300, lineHeight: 1.55, color: C.muted, marginTop: 22, maxWidth: 236, textWrap: "pretty" } as React.CSSProperties}>
         {out.notOnTrackReason}
@@ -220,7 +233,7 @@ function ConnectFooter() {
   return (
     <div>
       <Link
-        href="/body/start"
+        href="/body/connect"
         onClick={() => tapHaptic()}
         className="press"
         style={{

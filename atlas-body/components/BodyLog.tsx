@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 import { PageShell, PhoneFrame } from "./PhoneFrame";
@@ -51,9 +52,9 @@ export function BodyLog() {
           <button type="button" onClick={() => { tapHaptic(); router.push("/body"); }} className="press" style={{ background: "none", border: "none", cursor: "pointer", fontFamily: GEIST, fontSize: 13, color: C.muted }}>
             ‹ Back
           </button>
-          <div style={{ fontFamily: GEIST, fontSize: 11, fontWeight: 500, letterSpacing: "0.18em", textTransform: "uppercase", color: C.faint }}>
-            {todayIso()}
-          </div>
+          <Link href="/body/connect" onClick={() => tapHaptic()} style={{ fontFamily: GEIST, fontSize: 12, color: C.gold, textDecoration: "none" }}>
+            Connect a scale →
+          </Link>
         </div>
 
         <div style={{ flex: 1, overflowY: "auto" }}>
