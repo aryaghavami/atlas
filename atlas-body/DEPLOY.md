@@ -43,7 +43,13 @@ After this, every push to `main` deploys; every branch/PR gets a preview — sam
 
 Without these, the app is local-first (weigh-ins live on the device). To persist across devices:
 
-- **Supabase** — set `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`, then create the table:
+- **Supabase** — the table is **already provisioned** in your `aryajoonam` project
+  (`public.atlas_body_state`, RLS-locked to service-role, mirroring `atlas_state`). Just set the
+  Vercel env vars:
+  - `SUPABASE_URL=https://gdgqbuscvthwwfkvfhjp.supabase.co`
+  - `SUPABASE_SERVICE_ROLE_KEY=` (copy from Supabase → Project Settings → API → service_role)
+
+  To provision it elsewhere instead, run:
   ```sql
   create table public.atlas_body_state (
     key text primary key,
