@@ -1,0 +1,131 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  /* Geist / Geist Mono load via the <link> in layout.tsx; map Tailwind's font-sans/mono to them. */
+  --font-sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html,
+body {
+  background: #000000;
+  color: #f4f4f5;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Warm-dark, not sterile: a deep page wash + faint top vignette so pure black has depth. */
+body {
+  background:
+    radial-gradient(140% 90% at 50% -10%, rgba(212, 175, 55, 0.06) 0%, rgba(0, 0, 0, 0) 45%),
+    radial-gradient(120% 80% at 50% 120%, rgba(212, 175, 55, 0.04) 0%, rgba(0, 0, 0, 0) 50%),
+    #000000;
+  background-attachment: fixed;
+}
+
+/* Tabular figures everywhere numbers matter — keeps the big money number rock-steady. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* The hero number gold gradient text. */
+.gold-text {
+  background: linear-gradient(135deg, #f2d779 0%, #d4af37 45%, #b9952f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Subtle hairline + sheen on cards for real depth. */
+.card {
+  position: relative;
+  border-radius: 1rem;
+  background:
+    radial-gradient(120% 120% at 0% 0%, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0) 42%),
+    #0a0a0b;
+  border: 1px solid #1c1c20;
+  box-shadow:
+    0 1px 0 0 rgba(255, 255, 255, 0.03) inset,
+    0 18px 40px -22px rgba(0, 0, 0, 0.9);
+}
+
+.card-hover {
+  transition: border-color 160ms ease, transform 160ms ease;
+}
+.card-hover:hover {
+  border-color: #2c2c32;
+}
+
+/* Faint film grain to kill banding on the dark gradients (reads premium on camera). */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.025;
+  z-index: 50;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.rise {
+  animation: rise 600ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes countGlow {
+  0%,
+  100% {
+    text-shadow: 0 0 40px rgba(212, 175, 55, 0.25);
+  }
+  50% {
+    text-shadow: 0 0 64px rgba(212, 175, 55, 0.45);
+  }
+}
+.count-glow {
+  animation: countGlow 4s ease-in-out infinite;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+}
+
+/* On real phones: drop the device-mockup chrome and go edge-to-edge.
+   Targets the inline-styled frame via attribute selectors (React serializes space-free). */
+@media (max-width: 520px) {
+  main {
+    padding: 0 !important;
+    min-height: 100dvh !important;
+  }
+  /* the phone bezel -> full-bleed screen */
+  [style*="width:390px"][style*="border-radius:56px"] {
+    width: 100vw !important;
+    height: 100dvh !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+  /* inner screen (inset:11, radius 45) -> fill the viewport */
+  [style*="border-radius:45px"] {
+    inset: 0 !important;
+    border-radius: 0 !important;
+  }
+  /* hide the fake notch + fake status bar (wrong time/battery on a real device) */
+  [style*="width:118px"][style*="height:33px"],
+  [style*="top:0"][style*="height:54px"] {
+    display: none !important;
+  }
+}
